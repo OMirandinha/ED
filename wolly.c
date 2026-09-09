@@ -60,49 +60,25 @@ int main(void)
 
         printf("\nVidas restantes: %d\n", vidas);
 
-        /* Leitura da linha */
-        printf("\nDigite a linha (1 a %d): ", TAMANHO);
-
-        if (scanf("%d", &linha) != 1)
-        {
-            printf("\nEntrada invalida! Digite apenas numeros.\n");
-
-            /* Limpa o que ficou no teclado */
-            while (getchar() != '\n');
-
-            continue;
-        }
-
-        /* Verifica se a linha esta dentro do tabuleiro */
-        if (linha < 1 || linha > TAMANHO)
-        {
-            printf("\nLinha invalida! Digite um valor entre 1 e %d.\n",
-                   TAMANHO);
-
-            continue;
-        }
-
-        /* Leitura da coluna */
-        printf("Digite a coluna (1 a %d): ", TAMANHO);
-
-        if (scanf("%d", &coluna) != 1)
-        {
-            printf("\nEntrada invalida! Digite apenas numeros.\n");
-
-            /* Limpa o que ficou no teclado */
-            while (getchar() != '\n');
-
-            continue;
-        }
-
-        /* Verifica se a coluna esta dentro do tabuleiro */
-        if (coluna < 1 || coluna > TAMANHO)
-        {
-            printf("\nColuna invalida! Digite um valor entre 1 e %d.\n",
-                   TAMANHO);
-
-            continue;
-        }
+      /* Leitura da linha */
+    printf("\nDigite a linha (1 a %d): ", TAMANHO);
+    scanf("%d", &linha);
+    
+    if (linha < 1 || linha > TAMANHO)
+    {
+        printf("\nLinha invalida! Digite um valor entre 1 e %d.\n", TAMANHO);
+        continue;
+    }
+    
+    /* Leitura da coluna */
+    printf("Digite a coluna (1 a %d): ", TAMANHO);
+    scanf("%d", &coluna);
+    
+    if (coluna < 1 || coluna > TAMANHO)
+    {
+        printf("\nColuna invalida! Digite um valor entre 1 e %d.\n", TAMANHO);
+        continue;
+    }
 
         /*
          * Converte os valores digitados pelo usuario
@@ -179,4 +155,3 @@ int main(void)
 
     return 0;
 }
-```
