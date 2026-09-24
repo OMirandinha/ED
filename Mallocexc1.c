@@ -9,6 +9,11 @@ int main(){
     printf("Digite um número inteiro");
     scanf("%d", &n);
 
+    if(n < 0){
+        printf("\nNão foi possível alocar");
+        return 1;
+    }
+
     int *vet = malloc(n * sizeof(int));
 
     for(int i = 0; i < n * sizeof(int); i++){
@@ -23,6 +28,7 @@ int main(){
     printf("A somatória dos valores foi %d", resultado);
 
     free(vet);
+    vet = NULL;
 
     return 0;
 }
